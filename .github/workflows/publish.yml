@@ -36,4 +36,3 @@ jobs:
           PACKAGE_NAME: Cuttly
           NUGET_KEY: ${{secrets.NUGET_KEY }}
           VERSION_STATIC: 1.${{github.run_number}}
-          INCLUDE_SYMBOLS: true
