@@ -13,24 +13,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: Set up .NET Core
+       - uses: actions/checkout@v2
+
+      - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '6.0.x'
           include-prerelease: true
 
-    - name: Install dependencies
-      run: dotnet restore
       
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-
-    - name: Publish NuGet
-      uses: brandedoutcast/publish-nuget@v2.5.5
-      with: 
-        PROJECT_FILE_PATH: Cuttly.csproj
-        PACKAGE_NAME: Cuttly
-        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-        VERSION_STATIC: 1.${{github.run_number}}
+      - name: Install dependencies
+        run: dotnet restore
+        
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+      
+      - name: Publish NuGet
+        uses: brandedoutcast/publish-nuget@v2.5.5
+        with: 
+          PROJECT_FILE_PATH: Cuttly.csproj
+          PACKAGE_NAME: Cuttly
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          VERSION_STATIC: 1.${{github.run_number}}
