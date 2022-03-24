@@ -6,8 +6,10 @@
     <Nullable>enable</Nullable>
     <RepositoryUrl>https://github.com/nurzhanme/Cuttly</RepositoryUrl>
     <PackageProjectUrl>https://github.com/nurzhanme/Cuttly</PackageProjectUrl>
-    <Authors>$(AssemblyName)</Authors>
+    <Authors>Nurzhan AItbayev</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>$(VersionPrefix).0</Version>
+    <PackageTags>cuttly;bitly;TinyURL;url-shorten;</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
