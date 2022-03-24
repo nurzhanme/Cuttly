@@ -7,6 +7,8 @@ on:
   pull_request:
     branches:
       - master # Default release branch
+  workflow_dispatch:
+  
 jobs:
   build:
     name: build, pack & publish
