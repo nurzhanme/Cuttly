@@ -34,5 +34,5 @@ jobs:
         with: 
           PROJECT_FILE_PATH: Cuttly/Cuttly.csproj
           PACKAGE_NAME: Cuttly
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_KEY: ${{secrets.NUGET_KEY }}
           VERSION_STATIC: 1.${{github.run_number}}
