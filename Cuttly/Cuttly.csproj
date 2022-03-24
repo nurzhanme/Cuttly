@@ -8,7 +8,7 @@
     <PackageProjectUrl>https://github.com/nurzhanme/Cuttly</PackageProjectUrl>
     <Authors>Nurzhan AItbayev</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.0.1</Version>
+    <Version>$(VersionPrefix).$([System.DateTime]::Now.ToString(&amp;quot;yyyy.MM.dd.HHmmss&amp;quot;))</Version>
     <PackageTags>cuttly;bitly;TinyURL;url-shorten;</PackageTags>
   </PropertyGroup>
 
