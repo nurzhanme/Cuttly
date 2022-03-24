@@ -32,7 +32,7 @@ jobs:
       - name: Publish NuGet
         uses: brandedoutcast/publish-nuget@v2.5.5
         with: 
-          PROJECT_FILE_PATH: Cuttly.csproj
+          PROJECT_FILE_PATH: Cuttly/Cuttly.csproj
           PACKAGE_NAME: Cuttly
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
           VERSION_STATIC: 1.${{github.run_number}}
