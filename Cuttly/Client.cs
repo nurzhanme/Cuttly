@@ -22,7 +22,7 @@ namespace Cuttly
 
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-            _httpClient.BaseAddress = new Uri("https://cutt.ly/api/api.php");
+            _httpClient.BaseAddress = new Uri(_options.ApiBaseAddress ?? "https://cutt.ly/api/api.php");
 
             _httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
