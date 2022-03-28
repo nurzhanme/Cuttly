@@ -2,6 +2,6 @@
 {
     public class CuttlyOptions
     {
-        public string ApiKey { get; set; }
+        public string? ApiKey { get; set; }
     }
 }

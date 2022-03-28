@@ -8,15 +8,15 @@ namespace Cuttly.Responses
         public int Status { get; set; }
 
         [JsonPropertyName("date")]
-        public string Date { get; set; }
+        public string? Date { get; set; }
 
         [JsonPropertyName("shortLink")]
-        public string ShortLink { get; set; }
+        public string? ShortLink { get; set; }
 
         [JsonPropertyName("fullLink")]
-        public string FullLink { get; set; }
+        public string? FullLink { get; set; }
 
         [JsonPropertyName("title")]
-        public string Title { get; set; }
+        public string? Title { get; set; }
     }
 }
