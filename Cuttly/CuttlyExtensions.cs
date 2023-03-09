@@ -5,14 +5,20 @@ namespace Cuttly
 {
     public static class CuttlyExtensions
     {
-        public static void AddCuttly(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddCuttlyClient(this IServiceCollection services)
         {
-            services.Configure<CuttlyOptions>(configuration);
+            services.AddOptions<CuttlyOptions>();
+            services.AddHttpClient<CuttlyClient>();
+            var configuration = services.BuildServiceProvider().GetRequiredService<IConfiguration>();
+            services.Configure<CuttlyOptions>(configuration.GetSection(nameof(CuttlyOptions)));
+            return services;
         }
 
-        public static void AddCuttly(this IServiceCollection services, Action<CuttlyOptions> options)
+        public static IServiceCollection AddCuttlyClient(this IServiceCollection services, Action<CuttlyOptions> setupAction)
         {
-            services.Configure(options);
+            services.AddOptions<CuttlyOptions>().Configure(setupAction);
+            services.AddHttpClient<CuttlyClient>();
+            return services;
         }
     }
 }
